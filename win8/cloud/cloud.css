@@ -1,0 +1,59 @@
+html{height:100%}
+body{margin:0;font-size:12px;text-align:center;height:100%}
+a{text-decoration:none;color:#inherit}
+.clearfix:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clearfix{*zoom:1;}
+.fl{float:left}
+.font10{-webkit-text-size-adjust:none;font-size:10px}
+.font14{font-size:14px}
+.font16{font-size:16px}
+.container{height:100%}
+.bg{width:100%;height:100%;display:block;position:absolute;z-index:-1}
+.leftdiv{width:310px;height:100%;background:url(img/leftbg.png) repeat-y}
+.leftup{border-bottom:solid 1px #000;height:96px}
+.leftdown{border-top:solid 1px #b8c7db;padding:20px 0 0 8px;text-align:left;overflow:hidden;height:100%}
+.leftdisplay{overflow:hidden;width:290px;height:100%}
+#w8sanimal{position:relative}
+.darkcyan{background:#20b8e5}
+.darkblue{background:#4f33aa}
+.bay{background:#cf4020}
+.green{background:#00a11a}
+.darkred{background:#d3123f}
+.appname{color:#fff;padding-left:4px}
+.w8sapp{color:#fff}
+.paging{background:url(img/pagingbg.png);height:34px;position:absolute;bottom:0;left:0;width:100%;text-align:center;font-family:Arial;font-size:14px;color:#e7f5ff;line-height:21px;padding-top:1px}
+.innerleftdiv{position:relative;height:100%;overflow:hidden}
+.pagingone{float:left;width;width:23px;height:21px;margin:0 2px;cursor:pointer}
+.pagingnum{border-left:solid 1px #fafafa;border-right:solid 1px #000;padding:2px 25px}
+.pagingall{border-right:solid 1px #000;padding:2px 15px;cursor:pointer}
+.pagingadd{border-left:solid 1px #fafafa;width:50px;padding:2px 0;cursor:pointer}
+.plugarea{height:90px;text-align:left;min-width:700px;position:relative}
+.plugdiv{overflow:hidden;}
+.plugtable{margin:24px 0 0 18px}
+.searchtable{background:url(img/searchbg.png);width:213px;height:39px}
+.searchinput{border:none;background:none;color:#fafafa;margin-left:16px;outline:none}
+.searchimg{margin:2px 12px 0;cursor:pointer}
+.ccico{float:left;margin:0 0 0 10px;cursor:pointer}
+.apppanel{position:relative;height:100%;text-align:left;margin:0 20px 0 14px;min-height:470px;z-index:100}
+.apppanelimg{width:100%;height:100%;position:absolute;z-index:-1;top:0;left:0}
+.appptit{color:#03346d;padding-left:12px;font-weight:bold;line-height:26px;text-shadow:#fff 0 1px 0}
+.appctrltable{position:absolute;top:3px;right:7px}
+.appphead{position:relative}
+.appctrltable img{margin:0 3px;display:block;cursor:pointer}
+.rightdiv{height:100%;position:relative}
+.taskdiv{position:absolute;bottom:0;right:12px;text-align:right}
+.taskone{width:94px;height:33px;background:url(img/taskbg.png) left bottom;color:#fff;cursor:pointer;float:right}
+.taskone:hover{background:url(img/taskhoverbg.png) left bottom;}
+.taskone img{display:block;margin:0 2px}
+.pagingclicked{background:url(img/pagingonebg.png)}
+.funpanel{background:url(img/funbg.png) repeat-y;width:69px;text-align:center;position:absolute;top:10px;right:20px;z-index:0}
+.funpanel img{margin:12px auto}
+.funone{padding-bottom:10px;color:#fff;cursor:pointer}
+
+
+
+
+
+
+
+
