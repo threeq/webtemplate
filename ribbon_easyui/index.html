@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>jQuery easyui+Ribbon</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+	<link rel="stylesheet" type="text/css" href="js/easyui/themes/default/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="js/easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="js/ribbon/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/easyui-ribbon.css" />
+
+    <script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+    <script type="text/javascript" src="js/ribbon/jquery.ribbon.js" ></script>
+	<script type="text/javascript" src="js/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="js/easyui/plugins/jquery.propertygrid.js"></script>
+	<script type="text/javascript" src="js/easyui/locale/easyui-lang-zh_CN.js" ></script>
+	<script type="text/javascript" src="js/easyui/plugins/jquery.parser.js"></script>
+	<script type="text/javascript" src="js/ribbon.data.js"></script> 
+	
+</head>
+<body class="easyui-layout">
+	<div data-options="region:'north',border:false" style="height:120px;">
+    <div id="ribbon_main" class="mainContainer">
+        
+    </div>
+    </div>
+	<div data-options="region:'center'" style="overflow:hidden;">
+	<div id="mainTab" class="easyui-tabs" data-options="fit:true,border:false">
+		<div title="首页" style="padding:20px;">
+			欢迎使用!
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+	var ribbon_data = {
+		theme:'windows7',
+		orb:{ // 按钮数据
+			title: "orb",
+			accesskey: "1",
+			menuList:[
+				{  title:"New", action:"#", ico:"js/ribbon/images/icon_doc.png" },
+				{  title:"Open", action:"#", ico:"js/ribbon/images/icon_open.png" },
+				{  title:"Save", action:"#", ico:"js/ribbon/images/icon_save.png" },
+				{  title:"Save As", action:"#", ico:"js/ribbon/images/icon_saveas.png",
+				   subMenuList:[
+						{  title:"Rich Text document", action:"#", ico:"js/ribbon/images/icon_richtext.png" },
+						{  title:"Office Open XML documen", action:"#", ico:"js/ribbon/images/icon_ooxml.png" },
+						{  title:"OpenDocument text", action:"#", ico:"js/ribbon/images/icon_ooxml.png" },
+						{  title:"Plain text document", action:"#", ico:"js/ribbon/images/icon_plaintext.png" },
+						{  title:"Other formats", action:"#", ico:"js/ribbon/images/icon_otherformats.png" }
+				   ]
+				},
+				{  title:"Print", action:"#", ico:"js/ribbon/images/icon_print.png",
+					subMenuList:[
+						{  title:"Print", action:"#", ico:"js/ribbon/images/icon_print.png" },
+						{  title:"Quick print", action:"#", ico:"js/ribbon/images/icon_quickprint.png" },
+						{  title:"Print preview", action:"#", ico:"js/ribbon/images/icon_printpreview.png" }
+				   ]	   
+				},
+				{  title:"Page setup", action:"#", ico:"js/ribbon/images/icon_pagesetup.png" },
+				{  title:"Send in e-mail", action:"#", ico:"js/ribbon/images/icon_sendemail.png" },
+				{  title:"About", action:"#", ico:"js/ribbon/images/icon_about.png" },
+				{  title:"Exit", action:"#", ico:"js/ribbon/images/icon_exit.png" }
+			]
+		}, // 
+		menu:{ // 菜单数据
+			title:'menu',
+			menuList:[
+				{ title:"Home", 
+				  accesskey:'2',
+					subMenuGroup:[
+						{ groupTitle: 'Clipboard',
+						  itemList:[
+							{  type:'normal', title:'Paste', ico:'js/ribbon/images/icon_paste.png' },
+							{  type:'ribbon-list', 
+								menuList:[
+									{  type:'normal', title:'Cut', ico:'js/ribbon/images/icon_small_cut.png' },
+									{  type:'normal', title:'Copy', ico:'js/ribbon/images/icon_small_copy.png' }
+								] 
+							}
+						  ]	
+						},
+						{ groupTitle: 'Insert',
+						  itemList:[
+							{  type:'normal', title:'Date and time', ico:'js/ribbon/images/icon_datetime.png' },
+							{  type:'normal', title:'Picture', ico:'js/ribbon/images/icon_picture.png' },
+							{  type:'normal', title:'Paint drawing', ico:'js/ribbon/images/icon_paint.png' }
+						  ]	
+						},
+						{ groupTitle: 'Editing',
+						  itemList:[
+							{  type:'ribbon-list', 
+								menuList:[
+									{  type:'normal', title:'Find', ico:'js/ribbon/images/icon_small_find.png' },
+									{  type:'normal', title:'Replace', ico:'js/ribbon/images/icon_small_replace.png' },
+									{  type:'normal', title:'Select all', ico:'js/ribbon/images/icon_small_selectall.png' }
+								] 
+							}
+						  ]	
+						},
+						{ groupTitle: 'Theme',
+						  itemList:[
+							{  type:'ribbon-list', 
+								menuList:[
+									{  type:'select', title:'Ribbon theme', ico:'js/ribbon/images/icon_small_theme.png',
+										selectList:[
+											{title: 'Windows 7', ico:'js/ribbon/images/icon_small_theme.png', action:'chgTheme(\'windows7\')'},
+											{title: 'Simple', ico:'', action:'chgTheme(\'Simple\')'}
+										]
+									}
+								] 
+							}
+						  ]	
+						}
+					]
+				},
+				{ title:"View", 
+				  accesskey:'3',
+					subMenuGroup:[
+						{ groupTitle: 'Zoom',
+						  itemList:[
+							{  type:'normal', title:'Zoom in', ico:'js/ribbon/images/icon_zoomin.png' },
+							{  type:'normal', title:'Zoom out', ico:'js/ribbon/images/icon_zoomout.png' },
+							{  type:'normal', title:'100%', ico:'js/ribbon/images/icon_zoom100.png' }
+						  ]	
+						},
+						{ groupTitle: 'Show or hide',
+						  itemList:[
+							{  type:'ribbon-list', 
+								menuList:[
+									{  type:'checkbox', title:'Ruler', accesskey:'r', id:'chkbox1' },
+									{  type:'checkbox', title:'Status bar', accesskey:'s', id:'chkbox2' }
+								] 
+							}
+						  ]	
+						},
+						{ groupTitle: 'Settings',
+						  itemList:[
+							{  type:'ribbon-list', 
+								menuList:[
+									{  type:'select', title:'Word wrap', ico:'js/ribbon/images/icon_small_wordwrap.png',
+										selectList:[
+											{title: 'No wrap', ico:'', action:''},
+											{title: 'Wrap to window', ico:'', action:''},
+											{title: 'Wrap to ruler', ico:'', action:''}
+										]
+									},
+									{  type:'select', title:'Measurement units', ico:'js/ribbon/images/icon_small_theme.png',
+										selectList:[
+											{title: 'Inches', ico:'', action:''},
+											{title: 'Centimeters', ico:'', action:''},
+											{title: 'Points', ico:'', action:''},
+											{title: 'Picas', ico:'', action:''}
+										]
+									}
+								] 
+							}
+						  ]	
+						}
+					]
+				}
+			]
+		} 
+	};
+	ribbon_init('ribbon_main',ribbon_data);
+	function chgTheme(theme){
+		$().Ribbon({ theme: theme });
+	}
+	
+	</script>
+</body>
+</html>
